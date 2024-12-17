@@ -24,10 +24,24 @@ pip install -e .
 # Usage
 To prepare the data for segmentation, the input image data (in nifti format) should be placed in LAS orientation. This setting could help MRANnotator determine the laterality of the image volume.  
 
-MRAnnotator contains model weights specifically for Abdomen (Task_number:001), ShoulderKnee(Task_number:002), PelvisProstate(Task_number:003), and Spine(Task_number:005). 
+MRAnnotator contains model weights specifically for Abdomen (Task_number:001), ShoulderKnee (Task_number:002), PelvisProstate (Task_number:003), and Spine (Task_number:005). 
 ```
 CUDA_VISIBLE_DEVICES=0 nnUNetv2_predict -i image_path  -o  prediction_path  -d Task_number -c 3d_fullres -f 0 -tr nnUNetTrainerNoMirroring
 ```
+# Holdout test dataset
+In addition to the MRAnnotator model weights, we also provide a holdout independent test dataset for evaluating 3D MR segmentation. The distribution of the test dataset is desribed in the following table:
+
+|Anatomic study protocol|Anatomical structures|Sequences/Techniques|# Patients, Studies, & Sequences|
+|:-----|:-----|:-----|:-----|
+|Abdomen (axial) | spleen, kidney_right, kidney_left, gallbladder, liver, aorta, inferior vena cava, pancreas  | T1GRE, In/out of phase, T2, T2 FS, post-contrast, Dixon, LAVA | 30, 30, 30 |
+|Pelvis (coronal) | upper_femora, pelvis, sacrum | T1, T2, T2 FS, STIR, PD | 30, 30, 41|
+|Prostate (axial) | prostate | T1, T2 | 59, 60, 60 |
+|Shoulder (coronal) | humerus_right, clavicle_right, scapula_right, humerus_left, clavicle_left, scapula_left | PD, PD FS, T2, T2 FS | 30, 30, 60 |
+|Knee (sagittal) | femur, patella, fibula, tibia | PD, PD FS, T2, T2 FS | 30, 30, 58 |
+|Cervical spine (sagittal) | Vertebrae C3-C7  | T1, T1 FLAIR, T1 FS, T2, T2 FS, STIR | 30, 31, 40 |
+|Thoracic spine (sagittal) | Vertebrae T1-T12  | T1, T1 FLAIR, T2, T2 FS, STIR | 31, 32, 44 |
+|Lumbar spine (sagittal) | Vertebrae L1-L5  | T1, T1 FLAIR, T1 FS, T2, T2 FS, STIR | 30, 48, 64 |
+|Total | 44 structures | 11 | 263, 291, 397 |
 
 # Class details
 Here you can find the classes of each Task:
