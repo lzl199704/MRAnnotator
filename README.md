@@ -28,3 +28,22 @@ MRAnnotator contains model weights specifically for abdomen (Task_number:001), s
 ```
 CUDA_VISIBLE_DEVICES=0 nnUNetv2_predict -i image_path  -o  prediction_path  -d Task_number -c 3d_fullres -f 0 -tr nnUNetTrainerNoMirroring
 ```
+
+# Class details
+Here you can find the classes of each Task:
+
+|Index of Task001 Abdomen|Class name|
+|:-----|:-----|
+1 | spleen |
+2 | kidney_right |
+3 | kidney_left |
+4 | gallbladder |
+5 | liver |
+6 | aorta |
+7 | inferior vena cava |
+8 | pancreas | 
+
+# Citation
+Please cite the following paper if using MRAnnotator model weights or the benchmark houldout test dataset:
+```
+```
