@@ -1,4 +1,7 @@
-# MRAnnotator
-MRAnnotator: A Multi-Anatomy Deep Learning Model for MRI Segmentation
+# MRAnnotator: Multi-Anatomy and Many-Sequence MRI Segmentation of Forty-four Structures
+MRAnnotator is a tool for segmenting 44 anatomical structures in MR images across various sequences. A holdout independent test dataset can be downloaded here: .
 
-We will release the model weights for MRAnnotator once the paper is published. 
+Main classes for MRAnnotator:
+![Alt text](resources/Figure 2.png)
+
+
