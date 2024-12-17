@@ -32,16 +32,50 @@ CUDA_VISIBLE_DEVICES=0 nnUNetv2_predict -i image_path  -o  prediction_path  -d T
 # Class details
 Here you can find the classes of each Task:
 
-|Index of Task001 Abdomen|Class name||Index of Task002 ShoulderKnee|Class name|
-|:-----|:-----||:-----|:-----|
-|1 | spleen ||1 | femur |
-|2 | kidney_right ||2 | patella |
+|Index of Task001 Abdomen|Class name|
+|:-----|:-----|
+|1 | spleen |
+|2 | kidney_right |
 |3 | kidney_left |
 |4 | gallbladder |
 |5 | liver |
 |6 | aorta |
 |7 | inferior vena cava |
 |8 | pancreas | 
+
+|Index of Task002 ShoulderKnee|Class name|
+|:-----|:-----|
+|1 | femur |
+|2 | patella |
+|3 | fibula |
+|4 | tibia |
+|5 | humerus_right |
+|6 | clavicle_right |
+|7 | scapula_right |
+|8 | humerus_left |
+|9 | clavicle_left |
+|10 | scapula_left |
+
+|Index of Task003 PelvisProstate|Class name|
+|:-----|:-----|
+|1 | upper_femora |
+|2 | pelvis |
+|3 | sacrum |
+|4 | prostate |
+
+|Index of Task004 Spine|Class name|
+|:-----|:-----|
+|1 | Vertebrae C3 |
+|2 | Vertebrae C4 |
+|3 | Vertebrae C5 |
+|4 | Vertebrae C6 |
+|5 | Vertebrae C7 |
+|6 | Vertebrae T1 |
+|7 | Vertebrae T2 |
+|8 | Vertebrae T3 |
+|8 | Vertebrae T3 |
+|8 | Vertebrae T3 |
+|8 | Vertebrae T3 |
 
 # Citation
 Please cite the following paper if using MRAnnotator model weights or the benchmark houldout test dataset:
