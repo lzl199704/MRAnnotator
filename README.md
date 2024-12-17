@@ -73,9 +73,21 @@ Here you can find the classes of each Task:
 |6 | Vertebrae T1 |
 |7 | Vertebrae T2 |
 |8 | Vertebrae T3 |
-|8 | Vertebrae T3 |
-|8 | Vertebrae T3 |
-|8 | Vertebrae T3 |
+|9 | Vertebrae T4 |
+|10 | Vertebrae T5 |
+|11 | Vertebrae T6 |
+|12 | Vertebrae T7 |
+|13 | Vertebrae T8 |
+|14 | Vertebrae T9 |
+|15 | Vertebrae T10 |
+|16 | Vertebrae T11 |
+|17 | Vertebrae T12 |
+|18 | Vertebrae L1 |
+|19 | Vertebrae L2 |
+|20 | Vertebrae L3 |
+|21 | Vertebrae L4 |
+|22 | Vertebrae L5 |
+
 
 # Citation
 Please cite the following paper if using MRAnnotator model weights or the benchmark houldout test dataset:
