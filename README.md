@@ -2,6 +2,6 @@
 MRAnnotator is a tool for segmenting 44 anatomical structures in MR images across various sequences. A holdout independent test dataset can be downloaded here: .
 
 Main classes for MRAnnotator:
-![Alt text](resources/Figure 2.png)
+![Alt text](resources/label_figure.png)
 
 
