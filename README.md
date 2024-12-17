@@ -21,3 +21,10 @@ git clone https://github.com/MIC-DKFZ/nnUNet.git
 cd nnUNet
 pip install -e .
 ```
+# Usage
+To prepare the data for segmentation, the input image data (in nifti format) should be placed in LAS orientation. This setting could help MRANnotator determine the laterality of the image volume.  
+
+MRAnnotator contains model weights specifically for abdomen (Task_number:001), shoulder(Task_number:002), knee(Task_number:003), pelvis(Task_number:004), and spine(Task_number:005). 
+```
+CUDA_VISIBLE_DEVICES=0 nnUNetv2_predict -i image_path  -o  prediction_path  -d Task_number -c 3d_fullres -f 0 -tr nnUNetTrainerNoMirroring
+```
