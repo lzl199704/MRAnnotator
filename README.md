@@ -1,4 +1,4 @@
-# MRAnnotator: Multi-Anatomy and Many-Sequence MRI Segmentation of Forty-four Structures
+# MRAnnotator: Multi-Anatomy and Many-Sequence MRI Segmentation of 44 Structures
 MRAnnotator is a tool for segmenting 44 anatomical structures in MR images across various sequences. A holdout independent test dataset can be downloaded here: . *Highlight the model weights and dataset are released to the public for evaluation.*
 
 Main classes for MRAnnotator:
