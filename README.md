@@ -1,5 +1,5 @@
 # MRAnnotator: Multi-Anatomy and Many-Sequence MRI Segmentation of Forty-four Structures
-MRAnnotator is a tool for segmenting 44 anatomical structures in MR images across various sequences. A holdout independent test dataset can be downloaded here: .
+MRAnnotator is a tool for segmenting 44 anatomical structures in MR images across various sequences. A holdout independent test dataset can be downloaded here: . *Highlight the model weights and dataset are released to the public for evaluation.*
 
 Main classes for MRAnnotator:
 ![Alt text](resources/label_figure.png)
@@ -24,9 +24,12 @@ pip install -e .
 # Usage
 To prepare the data for segmentation, the input image data (in nifti format) should be placed in LAS orientation. This setting could help MRANnotator determine the laterality of the image volume.  
 
-MRAnnotator contains model weights specifically for Abdomen (Task_number:001), ShoulderKnee (Task_number:002), PelvisProstate (Task_number:003), and Spine (Task_number:005). 
+MRAnnotator contains model weights specifically for Abdomen (Task_number:001), ShoulderKnee (Task_number:002), PelvisProstate (Task_number:003), and Spine (Task_number:004). 
 ```
-CUDA_VISIBLE_DEVICES=0 nnUNetv2_predict -i image_path  -o  prediction_path  -d Task_number -c 3d_fullres -f 0 -tr nnUNetTrainerNoMirroring
+###segmentation of 8 abdomen organs
+CUDA_VISIBLE_DEVICES=0 nnUNetv2_predict -i image_path  -o  prediction_path  -d 001 -c 3d_fullres -f 0 -tr nnUNetTrainerNoMirroring
+###segmentation of 10 shoulder/knee organs
+CUDA_VISIBLE_DEVICES=0 nnUNetv2_predict -i image_path  -o  prediction_path  -d 002 -c 3d_fullres -f 0 -tr nnUNetTrainerNoMirroring
 ```
 # MRI dataset details
 The details of collected MRI data are described in the following table:
@@ -107,3 +110,6 @@ Here you can find the classes of each Task:
 Please cite the following paper if using MRAnnotator model weights or the benchmark houldout test dataset:
 ```
 ```
+
+# Acknowledgement
+Please also cite [nnUNet](https://github.com/MIC-DKFZ/nnUNet) as MRAnnotator is developed using its framework. The MRAnnotator is inspired from [Totalsegmentator](https://github.com/wasserth/TotalSegmentator/tree/master?tab=readme-ov-file) and [MRSegmentator](https://github.com/hhaentze/MRSegmentator).
