@@ -5,7 +5,7 @@ Main classes for MRAnnotator:
 ![Alt text](resources/label_figure.png)
 
 # Installation
-The model weights of MRAnnotator can be downloaded via the request: . 
+The model weights of MRAnnotator can be downloaded via the request: https://drive.google.com/file/d/1bqBmvq84ImOZMDtsXWIyMSvE0m-gDzBL/view?usp=drive_link. 
 
 Package dependency:
 * Python >= 3.9
