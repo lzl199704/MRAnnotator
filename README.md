@@ -22,9 +22,9 @@ cd nnUNet
 pip install -e .
 ```
 # Usage
-To prepare the data for segmentation, the input image data (in nifti format) should be placed in LAS orientation. This setting could help MRANnotator determine the laterality of the image volume.  
+To prepare the data for segmentation, the input image data (in nifti format) should be placed in **LAS** orientation. This setting could help MRANnotator determine the laterality of the image volume.  
 
-MRAnnotator contains model weights specifically for Abdomen (Task_number:001), ShoulderKnee (Task_number:002), PelvisProstate (Task_number:003), and Spine (Task_number:004). 
+MRAnnotator contains model weights specifically for Abdomen (Dataset001), ShoulderKnee (Dataset002), PelvisProstate (Dataset003), and Spine (Dataset004). 
 ```
 ###segmentation of 8 abdomen organs
 CUDA_VISIBLE_DEVICES=0 nnUNetv2_predict -i image_path  -o  prediction_path  -d 001 -c 3d_fullres -f 0 -tr nnUNetTrainerNoMirroring
