@@ -28,8 +28,15 @@ MRAnnotator contains model weights specifically for Abdomen (Dataset001), Should
 ```
 ###segmentation of 8 abdomen organs
 CUDA_VISIBLE_DEVICES=0 nnUNetv2_predict -i image_path  -o  prediction_path  -d 001 -c 3d_fullres -f 0 -tr nnUNetTrainerNoMirroring
-###segmentation of 10 shoulder/knee organs
+
+###segmentation of 10 shoulder/knee structures
 CUDA_VISIBLE_DEVICES=0 nnUNetv2_predict -i image_path  -o  prediction_path  -d 002 -c 3d_fullres -f 0 -tr nnUNetTrainerNoMirroring
+
+###segmentation of 4 pelvis/prostate structures
+CUDA_VISIBLE_DEVICES=0 nnUNetv2_predict -i image_path  -o  prediction_path  -d 003 -c 3d_fullres -f 0 -tr nnUNetTrainerNoMirroring
+
+###segmentation of 22 shoulder/knee structures
+CUDA_VISIBLE_DEVICES=0 nnUNetv2_predict -i image_path  -o  prediction_path  -d 004 -c 3d_fullres -f 0 -tr nnUNetTrainerNoMirroring
 ```
 # MRI dataset details
 The details of collected MRI data are described in the following table:
