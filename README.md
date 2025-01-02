@@ -1,17 +1,23 @@
 # MRAnnotator: Multi-Anatomy and Many-Sequence MRI Segmentation of 44 Structures
-MRAnnotator is a tool for segmenting 44 anatomical structures in MR images across various sequences. A holdout independent test dataset can be downloaded here: . *Highlight the model weights and dataset are released to the public for evaluation.*
+MRAnnotator is a tool for segmenting 44 anatomical structures in MR images across various sequences, with publicly available weights and a fully-annotated multi-anatomy evaluation dataset for MRI segmentation benchmarking. 
 
-Main classes for MRAnnotator:
-![Alt text](resources/label_figure.png)
+Details about this tool and dataset can be found in our paper, available on [*Radiology Advances*](https://academic.oup.com/radadv/advance-article/doi/10.1093/radadv/umae035/7926889).
+
+The structure segmentation classes for MRAnnotator are shown below:
+
+<img src=resources/label_figure.png alt="Example segmentations illustrating all structure classes" style="width:65%;"/>
 
 # Installation
-The model weights of MRAnnotator can be downloaded via the request: https://drive.google.com/file/d/1bqBmvq84ImOZMDtsXWIyMSvE0m-gDzBL/view?usp=drive_link. 
+The model weights of MRAnnotator can be downloaded by request here: https://drive.google.com/file/d/1bqBmvq84ImOZMDtsXWIyMSvE0m-gDzBL/view?usp=drive_link. 
 
-Package dependency:
+The fully-annotated evaluation test dataset is available by request here: XXX.
+
+Package dependencies:
 * Python >= 3.9
-* [Pytorch](http://pytorch.org/) >= 2.0.0 according to your hardware (cuda, mps, cpu).
+* [Pytorch](http://pytorch.org/) >= 2.0.0 according to your hardware (cuda, mps, cpu)
+* nnU-Net V2 (see below)
 
-MRAnnotator is developed on nnU-Net V2(version>=2.3.1) and follow the installation instruction from https://github.com/MIC-DKFZ/nnUNet/tree/master.
+MRAnnotator was developed on nnU-Net V2 (version>=2.3.1); follow the installation instructions from https://github.com/MIC-DKFZ/nnUNet/tree/master:
 ```
 pip install nnunetv2
 ```
@@ -22,9 +28,9 @@ cd nnUNet
 pip install -e .
 ```
 # Usage
-To prepare the data for segmentation, the input image data (in nifti format) should be placed in **LAS** orientation. This setting could help MRANnotator determine the laterality of the image volume.  
+To prepare your data for segmentation, input image data (NIfTI format) should be placed in **LAS** orientation, to enable MRANnotator to determine the laterality of the image volume.  
 
-MRAnnotator contains model weights specifically for Abdomen (Dataset001), ShoulderKnee (Dataset002), PelvisProstate (Dataset003), and Spine (Dataset004). 
+MRAnnotator contains model weights specifically for Abdomen (Dataset001), Shoulder/Knee (Dataset002), Pelvis/Prostate (Dataset003), and Spine (Dataset004) anatomic regions. 
 ```
 ###segmentation of 8 abdomen organs
 CUDA_VISIBLE_DEVICES=0 nnUNetv2_predict -i image_path  -o  prediction_path  -d 001 -c 3d_fullres -f 0 -tr nnUNetTrainerNoMirroring
@@ -38,8 +44,8 @@ CUDA_VISIBLE_DEVICES=0 nnUNetv2_predict -i image_path  -o  prediction_path  -d 0
 ###segmentation of 22 shoulder/knee structures
 CUDA_VISIBLE_DEVICES=0 nnUNetv2_predict -i image_path  -o  prediction_path  -d 004 -c 3d_fullres -f 0 -tr nnUNetTrainerNoMirroring
 ```
-# MRI dataset details
-The details of collected MRI data are described in the following table:
+# Training MRI dataset details
+The details of collected MRI data used to train the model weights are described in the following table:
 
 |Anatomic study protocol|Anatomical structures|Sequences/Techniques|
 |:-----|:-----|:-----|
@@ -53,8 +59,8 @@ The details of collected MRI data are described in the following table:
 |Lumbar spine (sagittal) | Vertebrae L1-L5  | T1, T1 FLAIR, T1 FS, T2, T2 FS, STIR | 
 |Total | 44 structures | 11 | 
 
-# Class details
-Here you can find the classes of each Task:
+# Segmentation details
+Structure classes within each anatomic region are assigned as follows:
 
 |Index of Task001 Abdomen|Class name|
 |:-----|:-----|
@@ -116,7 +122,19 @@ Here you can find the classes of each Task:
 # Citation
 Please cite the following paper if using MRAnnotator model weights or the benchmark houldout test dataset:
 ```
+@article{10.1093/radadv/umae035,
+    author = {Zhou, Alexander and Liu, Zelong and Tieu, Andrew and Patel, Nikhil and Sun, Sean and Yang, Anthony and Choi, Peter and Lee, Hao-Chih and Tordjman, Mickael and Deyer, Louisa and Mei, Yunhao and Fauveau, Valentin and Soultanidis, George and Taouli, Bachir and Huang, Mingqian and Doshi, Amish and Fayad, Zahi A and Deyer, Timothy and Mei, Xueyan},
+    title = {MRAnnotator: Multi-Anatomy and Many-Sequence MRI Segmentation of Forty-four Structures},
+    journal = {Radiology Advances},
+    pages = {umae035},
+    year = {2024},
+    month = {12},
+    issn = {2976-9337},
+    doi = {10.1093/radadv/umae035},
+    url = {https://doi.org/10.1093/radadv/umae035},
+    eprint = {https://academic.oup.com/radadv/advance-article-pdf/doi/10.1093/radadv/umae035/61218148/umae035.pdf},
+}
 ```
 
 # Acknowledgement
-Please also cite [nnUNet](https://github.com/MIC-DKFZ/nnUNet) as MRAnnotator is developed using its framework. The MRAnnotator is inspired from [Totalsegmentator](https://github.com/wasserth/TotalSegmentator/tree/master?tab=readme-ov-file) and [MRSegmentator](https://github.com/hhaentze/MRSegmentator).
+Please also cite [nnUNet](https://github.com/MIC-DKFZ/nnUNet), as MRAnnotator was developed using its framework. MRAnnotator is inspired by [TotalSegmentator](https://github.com/wasserth/TotalSegmentator/tree/master?tab=readme-ov-file) and [MRSegmentator](https://github.com/hhaentze/MRSegmentator).
