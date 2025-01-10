@@ -38,11 +38,13 @@ export nnUNet_results="../nnUNet_results"
 ```
 
 To prepare your data for segmentation, input image data (NIfTI format) should be placed in **LAS** orientation, to enable MRANnotator to determine the laterality of the image volume. The **confirm_LAS.py** script will check the orientation of the nifti volume, and conduct RAS-LAS transformation if needed. After confirming the image data in the correct orientation, image data should be stored in `./images_Ts/` under the `nnUNet_raw` folder like this:
+```
     nnUNet_raw/
     ├──Dataset001_Abdomen/
         ├── dataset.json
         ├── imagesTs
         └── labelsTs # if have ground truth testing labels
+```
 
 Based on the nnU-Net guideline, image files must follow the following naming convention: {CASE_IDENTIFIER}_0000.nii.gz. Hereby, CASE_IDENTIFIER should not contain `_`. For more detailed requirement, please read this document: https://github.com/MIC-DKFZ/nnUNet/blob/master/documentation/dataset_format.md
 
