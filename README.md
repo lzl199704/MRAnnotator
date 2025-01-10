@@ -8,7 +8,7 @@ The structure segmentation classes for MRAnnotator are shown below:
 <img src=resources/label_figure.png alt="Example segmentations illustrating all structure classes" style="width:65%;"/>
 
 # Installation
-The model weights of MRAnnotator can be downloaded here: [https://drive.google.com/file/d/1bqBmvq84ImOZMDtsXWIyMSvE0m-gDzBL/view?usp=drive_link](https://drive.google.com/file/d/15gQuvmaDlbs7HlGpISWNqnnWYGp9-Xc4/view?usp=sharing).  (https://drive.google.com/drive/folders/1Q_PbUspksDM_3cwLON-CpypnYyltpxEA?usp=drive_link).
+The model weights of MRAnnotator can be downloaded here: [https://drive.google.com/file/d/1bqBmvq84ImOZMDtsXWIyMSvE0m-gDzBL/view?usp=drive_link](https://drive.google.com/file/d/15gQuvmaDlbs7HlGpISWNqnnWYGp9-Xc4/view?usp=sharing). 
 **The use of MRAnnotator is under CC-BY-NC (non-commercial) license.**
 
 The fully-annotated evaluation test dataset is available by request here: [RadImageNet](https://www.radimagenet.com/).
