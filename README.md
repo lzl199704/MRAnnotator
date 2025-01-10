@@ -8,8 +8,8 @@ The structure segmentation classes for MRAnnotator are shown below:
 <img src=resources/label_figure.png alt="Example segmentations illustrating all structure classes" style="width:65%;"/>
 
 # Installation
-The model weights of MRAnnotator can be downloaded here: https://drive.google.com/file/d/1bqBmvq84ImOZMDtsXWIyMSvE0m-gDzBL/view?usp=drive_link. 
-**under CC-BY-NC (non-commercial) license.**
+The model weights of MRAnnotator can be downloaded here: [https://drive.google.com/file/d/1bqBmvq84ImOZMDtsXWIyMSvE0m-gDzBL/view?usp=drive_link](https://drive.google.com/file/d/15gQuvmaDlbs7HlGpISWNqnnWYGp9-Xc4/view?usp=sharing). 
+**The use of MRAnnotator is under CC-BY-NC (non-commercial) license.**
 
 The fully-annotated evaluation test dataset is available by request here: [RadImageNet](https://www.radimagenet.com/).
 
@@ -29,9 +29,16 @@ cd nnUNet
 pip install -e .
 ```
 # Usage
-To prepare your data for segmentation, input image data (NIfTI format) should be placed in **LAS** orientation, to enable MRANnotator to determine the laterality of the image volume. The **confirm_LAS.py** script will check the orientation of the nifti volume, and conduct RAS-LAS transformation if needed.  
+To prepare your data for segmentation, input image data (NIfTI format) should be placed in **LAS** orientation, to enable MRANnotator to determine the laterality of the image volume. The **confirm_LAS.py** script will check the orientation of the nifti volume, and conduct RAS-LAS transformation if needed. After confirming the image data in the correct orientation, datasets are stored in the `nnUNet_raw` folder like this:
 
-how to setup location for model weights and datasets
+    Dataset001_Abdomen/
+    ├── dataset.json
+    ├── imagesTs
+    └── labelsTs # if have ground truth testing labels
+
+For the setup of MRAnnotator, please follow the same instruction as the nnU-Net
+
+ how to setup location for model weights and datasets
 
 MRAnnotator contains model weights specifically for Abdomen (Dataset001), Shoulder/Knee (Dataset002), Pelvis/Prostate (Dataset003), and Spine (Dataset004) anatomic regions. 
 ```
