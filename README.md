@@ -37,7 +37,7 @@ export nnUNet_preprocessed="../nnUNet_preprocessed"
 export nnUNet_results="../nnUNet_results"
 ```
 
-To prepare your data for segmentation, input image data (NIfTI format) should be placed in **LAS** orientation, to enable MRANnotator to determine the laterality of the image volume. The **confirm_LAS.py** script will check the orientation of the nifti volume, and conduct RAS-LAS transformation if needed. After confirming the image data in the correct orientation, image data should be stored un 'imagesTs' under the `nnUNet_raw` folder like this:
+To prepare your data for segmentation, input image data (NIfTI format) should be placed in **LAS** orientation, to enable MRANnotator to determine the laterality of the image volume. The **confirm_LAS.py** script will check the orientation of the nifti volume, and conduct RAS-LAS transformation if needed. After confirming the image data in the correct orientation, image data should be stored in './imagesTs/' under the `nnUNet_raw` folder like this:
 
     Dataset001_Abdomen/
     ├── dataset.json
