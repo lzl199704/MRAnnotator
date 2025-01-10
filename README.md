@@ -44,7 +44,7 @@ To prepare your data for segmentation, input image data (NIfTI format) should be
     ├── imagesTs
     └── labelsTs # if have ground truth testing labels
 
-Based on the nnU-Net guideline, image files must follow the following naming convention: {CASE_IDENTIFIER}_{XXXX}.{FILE_ENDING}. Hereby, XXXX is the 4-digit modality/channel identifier (should be unique for each modality/channel, e.g., “0000” for T1, “0001” for T2 MRI, …) and FILE_ENDING is the file extension used by your image format (.png, .nii.gz, ...). For more detailed requirement, please read this document: https://github.com/MIC-DKFZ/nnUNet/blob/master/documentation/dataset_format.md
+Based on the nnU-Net guideline, image files must follow the following naming convention: {CASE_IDENTIFIER}_0000.nii.gz. Hereby, CASE_IDENTIFIER should not contain "_". For more detailed requirement, please read this document: https://github.com/MIC-DKFZ/nnUNet/blob/master/documentation/dataset_format.md
 
 After downloading the MRAnnotator weights, the model weights should be placed under 'nnUNet_results'. If you used nnU-Net previously, please ensure there is no conflict between Dataset numbers. 
 
