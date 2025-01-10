@@ -28,7 +28,7 @@ cd nnUNet
 pip install -e .
 ```
 # Usage
-To prepare your data for segmentation, input image data (NIfTI format) should be placed in **LAS** orientation, to enable MRANnotator to determine the laterality of the image volume. The **confirm_LAS.py** script will check the orientation of the nifti volume, and conduct RAS-LAS transformation if need.  
+To prepare your data for segmentation, input image data (NIfTI format) should be placed in **LAS** orientation, to enable MRANnotator to determine the laterality of the image volume. The **confirm_LAS.py** script will check the orientation of the nifti volume, and conduct RAS-LAS transformation if needed.  
 
 MRAnnotator contains model weights specifically for Abdomen (Dataset001), Shoulder/Knee (Dataset002), Pelvis/Prostate (Dataset003), and Spine (Dataset004) anatomic regions. 
 ```
