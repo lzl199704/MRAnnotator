@@ -167,4 +167,4 @@ Please cite the following paper if using MRAnnotator model weights or the benchm
 ```
 
 # Acknowledgement
-Please also cite [nnUNet](https://github.com/MIC-DKFZ/nnUNet), as MRAnnotator was developed using its framework. MRAnnotator is inspired by [TotalSegmentator](https://github.com/wasserth/TotalSegmentator/tree/master?tab=readme-ov-file) and [MRSegmentator](https://github.com/hhaentze/MRSegmentator).
+Please also cite [nnU-Net](https://github.com/MIC-DKFZ/nnUNet), as MRAnnotator was developed using its framework. MRAnnotator is inspired by [TotalSegmentator](https://github.com/wasserth/TotalSegmentator/tree/master?tab=readme-ov-file) and [MRSegmentator](https://github.com/hhaentze/MRSegmentator).
