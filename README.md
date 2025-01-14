@@ -151,16 +151,18 @@ Structure classes within each anatomic region are assigned as follows:
 Please cite the following paper if using MRAnnotator model weights or the benchmark houldout test dataset:
 ```
 @article{10.1093/radadv/umae035,
-    author = {Zhou, Alexander and Liu, Zelong and Tieu, Andrew and Patel, Nikhil and Sun, Sean and Yang, Anthony and Choi, Peter and Lee, Hao-Chih and Tordjman, Mickael and Deyer, Louisa and Mei, Yunhao and Fauveau, Valentin and Soultanidis, George and Taouli, Bachir and Huang, Mingqian and Doshi, Amish and Fayad, Zahi A and Deyer, Timothy and Mei, Xueyan},
-    title = {MRAnnotator: Multi-Anatomy and Many-Sequence MRI Segmentation of Forty-four Structures},
+    author = {Zhou, Alexander and Liu, Zelong and Tieu, Andrew and Patel, Nikhil and Sun, Sean and Yang, Anthony and Choi, Peter and Lee, Hao-Chih and Tordjman, Mickael and Deyer, Louisa and Mei, Yunhao and Fauveau, Valentin and Soultanidis, Georgios and Taouli, Bachir and Huang, Mingqian and Doshi, Amish and Fayad, Zahi A and Deyer, Timothy and Mei, Xueyan},
+    title = {MRAnnotator: multi-anatomy and many-sequence MRI segmentation of 44 structures},
     journal = {Radiology Advances},
+    volume = {2},
+    number = {1},
     pages = {umae035},
     year = {2024},
     month = {12},
     issn = {2976-9337},
     doi = {10.1093/radadv/umae035},
     url = {https://doi.org/10.1093/radadv/umae035},
-    eprint = {https://academic.oup.com/radadv/advance-article-pdf/doi/10.1093/radadv/umae035/61218148/umae035.pdf},
+    eprint = {https://academic.oup.com/radadv/article-pdf/2/1/umae035/61218148/umae035.pdf},
 }
 ```
 
