@@ -8,8 +8,9 @@ The structure segmentation classes for MRAnnotator are shown below:
 <img src=resources/label_figure.png alt="Example segmentations illustrating all structure classes" style="width:65%;"/>
 
 # Installation
-The model weights of MRAnnotator can be downloaded here: [https://drive.google.com/file/d/1bqBmvq84ImOZMDtsXWIyMSvE0m-gDzBL/view?usp=drive_link](https://drive.google.com/file/d/15gQuvmaDlbs7HlGpISWNqnnWYGp9-Xc4/view?usp=sharing). 
 **The use of MRAnnotator is under CC-BY-NC (non-commercial) license.**
+
+The model weights of MRAnnotator can be downloaded here: [https://drive.google.com/file/d/1bqBmvq84ImOZMDtsXWIyMSvE0m-gDzBL/view?usp=drive_link](https://drive.google.com/file/d/15gQuvmaDlbs7HlGpISWNqnnWYGp9-Xc4/view?usp=sharing). 
 
 The fully-annotated evaluation test dataset is available by request here: [RadImageNet](https://www.radimagenet.com/).
 
@@ -29,15 +30,17 @@ cd nnUNet
 pip install -e .
 ```
 # Usage
-After installing the nnU-Net, first set the root path of the environment. For Linux and MacOS, locate the `.bashrc` file in your home folder and add the following lines to the bottom to set the environment:
+After installing nnU-Net, first set the root path of the environment. For Linux and MacOS, locate the `.bashrc` file in your home folder and add the following lines to the environment:
 
-```bash
+```
+bash
 export nnUNet_raw="../nnUNet_raw"
 export nnUNet_preprocessed="../nnUNet_preprocessed"
 export nnUNet_results="../nnUNet_results"
 ```
 
-To prepare your data for segmentation, input image data (NIfTI format) should be placed in **LAS** orientation, to enable MRANnotator to determine the laterality of the image volume. The **confirm_LAS.py** script will check the orientation of the nifti volume, and conduct RAS-LAS transformation if needed. After confirming the image data in the correct orientation, image data should be stored in `./images_Ts/` under the `nnUNet_raw` folder like this:
+To prepare your data for segmentation, input image data (NIfTI format) should be placed in **LAS** orientation to enable MRAnnotator to determine the laterality of the image volume. The **confirm_LAS.py** script will check the orientation of the NIfTI volume and conduct RAS-LAS transformation if needed. After confirming the image data in the correct orientation, image data should be stored in `./images_Ts/` under the `nnUNet_raw` folder as follows:
+
 ```
     nnUNet_raw/
     ├──Dataset001_Abdomen/
@@ -50,11 +53,12 @@ To prepare your data for segmentation, input image data (NIfTI format) should be
         └── labelsTs # if have ground truth testing labels
 ```
 
-The `dataset.json` file can be found in the model weight folders for each anatomic region individually. Based on the nnU-Net guideline, image files must follow the following naming convention: {CASE_IDENTIFIER}_0000.nii.gz. Hereby, CASE_IDENTIFIER should not contain `_`. For more detailed requirement, please read this document: https://github.com/MIC-DKFZ/nnUNet/blob/master/documentation/dataset_format.md
+The `dataset.json` file can be found in the model weight folders for each anatomic region individually. Based on the nnU-Net guidelines, image files must follow the following naming convention: {CASE_IDENTIFIER}_0000.nii.gz (where CASE_IDENTIFIER should not contain `_`). For more detailed requirements, please read this document: https://github.com/MIC-DKFZ/nnUNet/blob/master/documentation/dataset_format.md
 
-**After downloading the MRAnnotator weights, the model weights should be placed under `nnUNet_results`. If you used nnU-Net previously, please ensure there is no conflict between Dataset numbers(001, 002, 003, and 004).** 
+**After downloading the MRAnnotator weights, the model weights should be placed under `nnUNet_results`. If you used nnU-Net previously, please ensure there is no conflict between Dataset numbers 001, 002, 003, and 004.** 
 
-MRAnnotator contains model weights specifically for Abdomen (Dataset001), Shoulder/Knee (Dataset002), Pelvis/Prostate (Dataset003), and Spine (Dataset004) anatomic regions. 
+MRAnnotator contains model weights specifically for the Abdomen (Dataset001), Shoulder/Knee (Dataset002), Pelvis/Prostate (Dataset003), and Spine (Dataset004) anatomic regions:
+
 ```
 ###segmentation of 8 abdomen organs
 CUDA_VISIBLE_DEVICES=0 nnUNetv2_predict -i image_path  -o  prediction_path  -d 001 -c 3d_fullres -f 0 -tr nnUNetTrainerNoMirroring
