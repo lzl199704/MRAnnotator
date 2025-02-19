@@ -12,7 +12,7 @@ The structure segmentation classes for MRAnnotator are shown below:
 
 The model weights of MRAnnotator can be downloaded here: [https://drive.google.com/file/d/1bqBmvq84ImOZMDtsXWIyMSvE0m-gDzBL/view?usp=drive_link](https://drive.google.com/file/d/15gQuvmaDlbs7HlGpISWNqnnWYGp9-Xc4/view?usp=sharing). 
 
-The fully-annotated evaluation test dataset is available by request here: [RadImageNet](https://www.radimagenet.com/).
+**The fully-annotated evaluation test dataset is available by request here: [RadImageNet](https://www.radimagenet.com/).**
 
 Package dependencies:
 * Python >= 3.9
